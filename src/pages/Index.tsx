@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ModelsSection from "@/components/ModelsSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -25,14 +24,19 @@ const Index = () => {
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         })}</script>
       </Helmet>
-      <Navbar />
-      <main className="pt-16">
-        <HeroSection />
-        <ModelsSection />
-        <FeaturesSection />
-        <CodeDemo />
-        <ServicesSection />
-        <CTASection />
+      <main className="relative">
+        {/* Global background effects */}
+        <div className="fixed inset-0 bg-aurora pointer-events-none z-0" />
+        <div className="fixed inset-0 bg-grid-pattern opacity-30 pointer-events-none z-0" />
+        
+        <div className="relative z-10">
+          <HeroSection />
+          <ModelsSection />
+          <FeaturesSection />
+          <CodeDemo />
+          <ServicesSection />
+          <CTASection />
+        </div>
       </main>
       <Footer />
     </>
