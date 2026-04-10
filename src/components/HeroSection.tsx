@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-glow-radial" />
-      <div className="absolute inset-0 bg-grid opacity-30" />
+      {/* Animated mesh blobs */}
+      <div className="absolute top-20 -left-32 w-[500px] h-[500px] bg-primary/[0.07] animate-blob blur-[80px]" />
+      <div className="absolute top-40 right-0 w-[400px] h-[400px] bg-secondary/[0.06] animate-blob blur-[80px]" style={{ animationDelay: "2s" }} />
+      <div className="absolute -bottom-20 left-1/3 w-[450px] h-[450px] bg-accent/[0.05] animate-blob blur-[80px]" style={{ animationDelay: "4s" }} />
 
-      {/* Floating orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-primary/5 blur-[100px] animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-secondary/5 blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
+      {/* Dot pattern */}
+      <div className="absolute inset-0 bg-dot-pattern opacity-50" />
 
       <div className="container relative z-10 text-center px-4">
         <motion.div
@@ -20,7 +20,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8">
             <Zap className="w-4 h-4 text-primary" />
             <span className="text-sm text-primary font-medium">500+ AI Models · One API</span>
           </div>
@@ -37,11 +37,11 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="text-base px-8 h-13 bg-primary text-primary-foreground hover:bg-primary/90 glow-border">
+            <Button size="lg" className="text-base px-8 h-13 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20">
               Get Started Free
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button variant="outline" size="lg" className="text-base px-8 h-13 border-border/50 text-foreground hover:bg-muted">
+            <Button variant="outline" size="lg" className="text-base px-8 h-13 border-border text-foreground hover:bg-muted">
               View API Docs
             </Button>
           </div>

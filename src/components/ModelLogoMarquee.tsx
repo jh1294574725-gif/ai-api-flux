@@ -1,16 +1,16 @@
 const AI_MODELS = [
-  { name: "OpenAI", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/openai.png" },
-  { name: "Claude", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/claude.png" },
-  { name: "Gemini", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/gemini.png" },
-  { name: "DeepSeek", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/deepseek.png" },
-  { name: "Mistral", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/mistral.png" },
-  { name: "Meta", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/meta.png" },
-  { name: "Midjourney", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/midjourney.png" },
-  { name: "Stability AI", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/stability.png" },
-  { name: "Cohere", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/cohere.png" },
-  { name: "Perplexity", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/perplexity.png" },
-  { name: "Groq", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/groq.png" },
-  { name: "Qwen", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/dark/qwen.png" },
+  { name: "OpenAI", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/openai-text.png" },
+  { name: "Claude", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/claude-color.png" },
+  { name: "Gemini", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/gemini-color.png" },
+  { name: "DeepSeek", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/deepseek-color.png" },
+  { name: "Mistral", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/mistral-color.png" },
+  { name: "Meta", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/meta-color.png" },
+  { name: "Midjourney", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/midjourney.png" },
+  { name: "Stability AI", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/stability-color.png" },
+  { name: "Cohere", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/cohere-color.png" },
+  { name: "Perplexity", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/perplexity-color.png" },
+  { name: "Groq", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/groq-color.png" },
+  { name: "Qwen", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/qwen-color.png" },
 ];
 
 const ModelLogoMarquee = () => {
@@ -27,7 +27,7 @@ const ModelLogoMarquee = () => {
         {logos.map((model, i) => (
           <div
             key={`r1-${i}`}
-            className="flex items-center gap-3 mx-6 px-5 py-3 rounded-xl bg-card/50 border border-border/30 backdrop-blur-sm whitespace-nowrap shrink-0 hover:glow-border transition-shadow duration-300"
+            className="flex items-center gap-3 mx-4 px-5 py-3 rounded-2xl bg-card border border-border/60 whitespace-nowrap shrink-0 glow-card"
           >
             <img
               src={model.icon}
@@ -35,7 +35,7 @@ const ModelLogoMarquee = () => {
               className="w-8 h-8 object-contain"
               loading="lazy"
             />
-            <span className="text-sm font-medium text-foreground/80">{model.name}</span>
+            <span className="text-sm font-medium text-foreground/70">{model.name}</span>
           </div>
         ))}
       </div>
@@ -45,7 +45,7 @@ const ModelLogoMarquee = () => {
         {logos.map((model, i) => (
           <div
             key={`r2-${i}`}
-            className="flex items-center gap-3 mx-6 px-5 py-3 rounded-xl bg-card/50 border border-border/30 backdrop-blur-sm whitespace-nowrap shrink-0 hover:glow-border transition-shadow duration-300"
+            className="flex items-center gap-3 mx-4 px-5 py-3 rounded-2xl bg-card border border-border/60 whitespace-nowrap shrink-0 glow-card"
           >
             <img
               src={model.icon}
@@ -53,7 +53,7 @@ const ModelLogoMarquee = () => {
               className="w-8 h-8 object-contain"
               loading="lazy"
             />
-            <span className="text-sm font-medium text-foreground/80">{model.name}</span>
+            <span className="text-sm font-medium text-foreground/70">{model.name}</span>
           </div>
         ))}
       </div>
