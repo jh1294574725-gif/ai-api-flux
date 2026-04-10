@@ -5,61 +5,64 @@ import BorderGlowCard from "./BorderGlowCard";
 const features = [
   {
     icon: Wallet,
-    title: "Pay As You Go",
-    desc: "No subscriptions. Pay only for what you use, balance never expires.",
-    glow: "195, 100%, 50%",
+    title: "按量计费",
+    desc: "无需订阅，用多少付多少，余额永不过期。",
+    glow: "217, 91%, 60%",
   },
   {
     icon: Blocks,
-    title: "OpenAI Compatible",
-    desc: "Drop-in replacement. Works with any OpenAI SDK or client app.",
-    glow: "260, 80%, 60%",
+    title: "兼容 OpenAI",
+    desc: "完全兼容 OpenAI SDK，无需修改代码即可迁移。",
+    glow: "270, 70%, 60%",
   },
   {
     icon: BarChart3,
-    title: "Transparent Billing",
-    desc: "Track every request cost in real-time. No hidden fees, ever.",
-    glow: "170, 80%, 45%",
+    title: "透明账单",
+    desc: "实时追踪每次请求的费用，无任何隐藏费用。",
+    glow: "170, 80%, 42%",
   },
   {
     icon: Activity,
-    title: "High Concurrency",
-    desc: "Enterprise-grade infrastructure handles thousands of requests per second.",
-    glow: "195, 100%, 50%",
+    title: "高并发",
+    desc: "企业级架构，轻松处理每秒数千次请求。",
+    glow: "217, 91%, 60%",
   },
   {
     icon: Shield,
-    title: "99.9% Uptime",
-    desc: "Multi-region deployment with automatic failover for maximum reliability.",
-    glow: "260, 80%, 60%",
+    title: "99.9% 可用性",
+    desc: "多区域部署，自动故障转移，确保最大可靠性。",
+    glow: "270, 70%, 60%",
   },
   {
     icon: Globe,
-    title: "Global Access",
-    desc: "Edge nodes worldwide ensure low latency from anywhere on the planet.",
-    glow: "170, 80%, 45%",
+    title: "全球加速",
+    desc: "全球边缘节点部署，确保低延迟极速访问。",
+    glow: "170, 80%, 42%",
   },
 ];
 
 const FeaturesSection = () => {
   return (
-    <section className="py-24 relative" id="features">
-      <div className="container px-4">
+    <section className="py-16 md:py-24 relative" id="features">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-mesh pointer-events-none" />
+      
+      <div className="container px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why Choose <span className="text-gradient-primary">Our API</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
+            为什么选择 <span className="text-gradient-primary">Halo</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Built for developers who demand speed, reliability, and simplicity.
+          <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto">
+            为追求速度、稳定和简洁的开发者打造
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
@@ -68,10 +71,10 @@ const FeaturesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <BorderGlowCard glowColor={f.glow} className="bg-card p-8 h-full glow-card">
-                <f.icon className="w-10 h-10 text-primary mb-5" />
-                <h3 className="text-xl font-semibold mb-3 text-foreground">{f.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{f.desc}</p>
+              <BorderGlowCard glowColor={f.glow} className="bg-card p-6 md:p-8 h-full glow-card">
+                <f.icon className="w-8 md:w-10 h-8 md:h-10 text-primary mb-4 md:mb-5" />
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-foreground">{f.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{f.desc}</p>
               </BorderGlowCard>
             </motion.div>
           ))}
