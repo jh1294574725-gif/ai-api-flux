@@ -24,13 +24,19 @@ const Index = () => {
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         })}</script>
       </Helmet>
-      <main>
-        <HeroSection />
-        <ModelsSection />
-        <FeaturesSection />
-        <CodeDemo />
-        <ServicesSection />
-        <CTASection />
+      <main className="relative">
+        {/* Global background effects */}
+        <div className="fixed inset-0 bg-aurora pointer-events-none z-0" />
+        <div className="fixed inset-0 bg-grid-pattern opacity-30 pointer-events-none z-0" />
+        
+        <div className="relative z-10">
+          <HeroSection />
+          <ModelsSection />
+          <FeaturesSection />
+          <CodeDemo />
+          <ServicesSection />
+          <CTASection />
+        </div>
       </main>
       <Footer />
     </>
