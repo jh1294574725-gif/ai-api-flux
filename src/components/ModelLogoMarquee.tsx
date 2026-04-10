@@ -1,15 +1,15 @@
 const AI_MODELS = [
-  { name: "OpenAI", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/openai-text.png" },
+  { name: "OpenAI", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/openai.png" },
   { name: "Claude", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/claude-color.png" },
   { name: "Gemini", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/gemini-color.png" },
   { name: "DeepSeek", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/deepseek-color.png" },
   { name: "Mistral", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/mistral-color.png" },
   { name: "Meta", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/meta-color.png" },
   { name: "Midjourney", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/midjourney.png" },
-  { name: "Stability AI", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/stability-color.png" },
+  { name: "Stability", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/stability-color.png" },
   { name: "Cohere", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/cohere-color.png" },
   { name: "Perplexity", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/perplexity-color.png" },
-  { name: "Groq", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/groq-color.png" },
+  { name: "Groq", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/groq.png" },
   { name: "Qwen", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/1.14.0/files/light/qwen-color.png" },
 ];
 
@@ -17,25 +17,25 @@ const ModelLogoMarquee = () => {
   const logos = [...AI_MODELS, ...AI_MODELS];
 
   return (
-    <div className="relative overflow-hidden py-8">
+    <div className="relative overflow-hidden py-6 md:py-8">
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10" />
 
       {/* Row 1 */}
-      <div className="flex animate-marquee mb-6">
+      <div className="flex animate-marquee mb-4 md:mb-6">
         {logos.map((model, i) => (
           <div
             key={`r1-${i}`}
-            className="flex items-center gap-3 mx-4 px-5 py-3 rounded-2xl bg-card border border-border/60 whitespace-nowrap shrink-0 glow-card"
+            className="flex items-center gap-2 md:gap-3 mx-2 md:mx-4 px-3 md:px-5 py-2 md:py-3 rounded-xl md:rounded-2xl bg-card border border-border/60 whitespace-nowrap shrink-0 glow-card"
           >
             <img
               src={model.icon}
               alt={model.name}
-              className="w-8 h-8 object-contain"
+              className="w-6 h-6 md:w-8 md:h-8 object-contain"
               loading="lazy"
             />
-            <span className="text-sm font-medium text-foreground/70">{model.name}</span>
+            <span className="text-xs md:text-sm font-medium text-foreground/70">{model.name}</span>
           </div>
         ))}
       </div>
@@ -45,15 +45,15 @@ const ModelLogoMarquee = () => {
         {logos.map((model, i) => (
           <div
             key={`r2-${i}`}
-            className="flex items-center gap-3 mx-4 px-5 py-3 rounded-2xl bg-card border border-border/60 whitespace-nowrap shrink-0 glow-card"
+            className="flex items-center gap-2 md:gap-3 mx-2 md:mx-4 px-3 md:px-5 py-2 md:py-3 rounded-xl md:rounded-2xl bg-card border border-border/60 whitespace-nowrap shrink-0 glow-card"
           >
             <img
               src={model.icon}
               alt={model.name}
-              className="w-8 h-8 object-contain"
+              className="w-6 h-6 md:w-8 md:h-8 object-contain"
               loading="lazy"
             />
-            <span className="text-sm font-medium text-foreground/70">{model.name}</span>
+            <span className="text-xs md:text-sm font-medium text-foreground/70">{model.name}</span>
           </div>
         ))}
       </div>
