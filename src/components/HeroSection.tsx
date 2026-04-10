@@ -37,7 +37,7 @@ const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Button size="lg" className="w-full sm:w-auto text-base px-8 h-12 md:h-13 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20">
-              免费开始使用
+              开始使用
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button variant="outline" size="lg" className="w-full sm:w-auto text-base px-8 h-12 md:h-13 border-border text-foreground hover:bg-muted">

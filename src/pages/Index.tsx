@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ModelsSection from "@/components/ModelsSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -25,8 +24,7 @@ const Index = () => {
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         })}</script>
       </Helmet>
-      <Navbar />
-      <main className="pt-16">
+      <main>
         <HeroSection />
         <ModelsSection />
         <FeaturesSection />

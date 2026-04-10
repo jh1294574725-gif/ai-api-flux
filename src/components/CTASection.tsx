@@ -20,7 +20,7 @@ const CTASection = () => {
             加入 10,000+ 开发者的行列，注册即送 $1 免费额度。
           </p>
           <Button size="lg" className="w-full sm:w-auto text-base px-10 h-12 md:h-14 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20">
-            免费开始使用
+            开始使用
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </motion.div>
