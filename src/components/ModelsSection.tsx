@@ -1,14 +1,23 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ModelLogoMarquee from "./ModelLogoMarquee";
 
 const ModelsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const headerY = useTransform(scrollYProgress, [0, 0.3], [50, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const marqueeScale = useTransform(scrollYProgress, [0, 0.3], [0.96, 1]);
+
   return (
-    <section className="py-16 md:py-24 relative" id="models">
+    <section ref={sectionRef} className="py-16 md:py-24 relative" id="models">
       <div className="container px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          style={{ y: headerY, opacity: headerOpacity }}
           className="text-center mb-8 md:mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
@@ -19,7 +28,9 @@ const ModelsSection = () => {
           </p>
         </motion.div>
       </div>
-      <ModelLogoMarquee />
+      <motion.div style={{ scale: marqueeScale }}>
+        <ModelLogoMarquee />
+      </motion.div>
     </section>
   );
 };

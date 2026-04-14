@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import BorderGlowCard from "./BorderGlowCard";
 
 const codeSnippet = `import OpenAI from "openai";
@@ -16,15 +17,21 @@ const response = await client.chat.completions.create({
 console.log(response.choices[0].message);`;
 
 const CodeDemo = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const leftX = useTransform(scrollYProgress, [0, 0.4], [-60, 0]);
+  const rightX = useTransform(scrollYProgress, [0, 0.4], [60, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+
   return (
-    <section className="py-16 md:py-24 relative">
+    <section ref={sectionRef} className="py-16 md:py-24 relative">
       <div className="container px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div style={{ x: leftX, opacity }}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
               <span className="text-gradient-accent">几分钟</span>即可上手
             </h2>
@@ -41,11 +48,7 @@ const CodeDemo = () => {
             </ul>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div style={{ x: rightX, opacity }}>
             <BorderGlowCard glowColor="217, 91%, 60%" className="bg-card">
               <div className="px-4 py-3 border-b border-border/50 flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-destructive/60" />
