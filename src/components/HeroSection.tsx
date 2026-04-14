@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import GlowText from "./GlowText";
 
 const HeroSection = () => {
   return (
@@ -26,7 +27,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 md:mb-6 leading-[1.1]">
-            <span className="text-gradient-primary">统一 AI 接口</span>
+            <GlowText>统一 AI 接口</GlowText>
             <br />
             <span className="text-foreground">为开发者而生</span>
           </h1>
